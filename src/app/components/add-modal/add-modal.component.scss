@@ -1,0 +1,8 @@
+@import "variables";
+
+.error-message {
+display: block;
+  margin-top: 5px;
+  color: $deleteBtnRed;
+  font-size: 12px;
+}

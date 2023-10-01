@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'reset';
+@import 'variables';
+@import 'fonts';
+@import 'bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open-Sans', sans-serif;
+}
+
+textarea {
+  resize: none;
+}

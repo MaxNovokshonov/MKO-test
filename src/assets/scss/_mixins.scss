@@ -1,0 +1,11 @@
+@import 'variables';
+
+@mixin button {
+  min-width: 300px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  color: $white;
+  background-color: $headerInputPlaceholder;
+  border-radius: 10px;
+}

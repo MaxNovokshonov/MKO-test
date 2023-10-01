@@ -1,0 +1,14 @@
+<aside class="sidebar">
+  <div *ngIf="message; else noMessage" class="sidebar__wrapper">
+    <div>
+      <h3 class="sidebar__user">{{message.username}}</h3>
+      <span class="sidebar__date">{{message.datetime}}</span>
+      <p class="sidebar__message">{{message.message}}</p>
+    </div>
+    <button (click)="editMessage()" class="sidebar__btn" type="button">Изменить</button>
+  </div>
+</aside>
+
+<ng-template #noMessage>
+  <span class="no-message">Сообщение не выбрано...</span>
+</ng-template>

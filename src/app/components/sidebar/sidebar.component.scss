@@ -1,0 +1,58 @@
+@import "variables";
+@import 'mixins';
+
+.sidebar {
+  z-index: 10;
+  position: absolute;
+  padding: 170px 40px 40px 40px;
+  right: 0;
+  top: 0;
+  width: 600px;
+  height: 99vh;
+  box-shadow: 0 9px 27px rgba(176, 190, 197, 0.32), 0 3px 6px rgba(176, 190, 197, 0.32);
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__user {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: $textGray;
+  }
+
+  &__message {
+    font-size: 24px;
+    color: $black;
+    text-align: justify;
+  }
+
+  &__btn {
+    @include button;
+  }
+
+  &__btn:hover {
+    color: $headerInputPlaceholder;
+    background-color: transparent;
+    border: 2px solid $headerInputBorder;
+  }
+}
+
+.no-message {
+  padding-top: 30px;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  color: $mainBlue;
+}

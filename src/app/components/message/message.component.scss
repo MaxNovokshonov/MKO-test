@@ -1,0 +1,46 @@
+@import "variables";
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid $textGray;
+
+  td {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__id {
+    min-width: 100px;
+  }
+
+  &__author {
+    min-width: 200px;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    min-width: 320px;
+  }
+
+  &__message {
+    width: 100%;
+  }
+
+  &__delete {
+    padding: 3px 15px;
+    background-color: $deleteBtnRed;
+    color: $white;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: $headerInputBorder;
+}
+
+

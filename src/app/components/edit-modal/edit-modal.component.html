@@ -1,0 +1,62 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Изменить сообщение</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form
+      [formGroup]="editMessageForm"
+      (ngSubmit)="submit()"
+    >
+      <div class="mb-3">
+        <label>Автор</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            placeholder="Введите имя автора"
+            type="text"
+            formControlName="username"
+          />
+        </div>
+        <span *ngIf="username.errors?.['required'] && username.touched" class="error-message">
+                    Поле обязательно для заполнения
+                </span>
+      </div>
+      <div class="mb-3">
+        <label>Дата</label>
+        <div class="input-group">
+          <input
+            type="datetime-local"
+            class="form-control"
+            formControlName="datetime"
+          />
+        </div>
+        <span *ngIf="datetime.errors?.['required'] && datetime.touched" class="error-message">
+                    Поле обязательно для заполнения
+                </span>
+      </div>
+      <div class="mb-3">
+        <label>Текст сообщения</label>
+        <div class="input-group">
+                    <textarea
+                      class="form-control"
+                      placeholder="Введите текст сообщения"
+                      rows="10"
+                      formControlName="message"
+                    ></textarea>
+        </div>
+      </div>
+      <span *ngIf="message.errors?.['required'] && message.touched" class="error-message">
+                    Поле обязательно для заполнения
+                </span>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Отмена
+        </button>
+        <button [disabled]="editMessageForm.invalid" type="submit" class="btn btn-primary"
+        >Изменить
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

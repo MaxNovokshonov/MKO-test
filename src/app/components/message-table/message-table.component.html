@@ -1,0 +1,28 @@
+<div class="table">
+  <div class="table__container">
+    <table>
+      <thead class="table__thead thead">
+      <tr class="thead__wrapper">
+        <th class="thead__item id">id</th>
+        <th class="thead__item author">Автор</th>
+        <th class="thead__item date">Дата и время создания</th>
+        <th class="thead__item message">Текст сообщения</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="messages$ | async as messages ; else loading" class="table__tbody tbody">
+      <app-message *ngFor="let message of messages  | paginate: { itemsPerPage: messagePerPage, currentPage: page }"
+                   [message]="message" [searchStr]="searchStr" (deleteButtonClick)="openModal($event)"></app-message>
+      </tbody>
+    </table>
+  </div>
+  <div class="table__pagination">
+    <pagination-controls (pageChange)="page = $event"
+                         [previousLabel]="labels.previousLabel"
+                         [nextLabel]="labels.nextLabel"></pagination-controls>
+  </div>
+</div>
+
+<ng-template #loading>
+  <span class="no-message">Загрузка данных...</span>
+</ng-template>
+

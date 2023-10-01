@@ -1,0 +1,77 @@
+@import "variables";
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 600px);
+  height: 99vh;
+  padding: 150px 40px 40px 40px;
+  text-align: justify;
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  &__pagination {
+    margin: auto 0 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0 9px 27px rgba(176, 190, 197, 0.32), 0 3px 6px rgba(176, 190, 197, 0.32);
+    border: 1px solid $mainBlue;
+    border-radius: 10px;
+  }
+
+  &__tbody {
+  }
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+
+  tr {
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $mainBlue;
+    background-color: $white;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    font-weight: 700;
+    font-size: 20px;
+    color: $mainBlue;
+  }
+}
+
+.id {
+  min-width: 100px;
+  text-transform: uppercase;
+}
+
+.author {
+  min-width: 200px;
+}
+
+.date {
+  min-width: 320px;
+}
+
+.message {
+  width: 100%;
+}
+
+
+

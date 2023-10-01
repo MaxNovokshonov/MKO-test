@@ -1,0 +1,11 @@
+<tr (mouseenter)="showDeleteButton()" (mouseleave)="hideDeleteButton()" [routerLink]="['/messages', message.id]"
+    [class.active]="activeMessage" class="message">
+  <td class="message__id">{{message.id}}</td>
+  <td class="message__author" [innerHTML]="message.username | search: searchStr "></td>
+  <td class="message__date"> {{message.datetime | date: 'dd-MM-yyyy HH:mm:ss'}}</td>
+  <td class="message__message" [innerHTML]="message.message | shortMessage | search: searchStr"></td>
+  <td *ngIf="isDeleteButtonVisible" (click)="deleteMessage(message.id)" class="message__delete">Удалить</td>
+</tr>
+
+
+

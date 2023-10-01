@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="header__container">
+    <a class="header__logo">
+      <img class="logo__img" src="/assets/img/mko-logo.jpeg" alt="MKO-logo">
+    </a>
+    <form [formGroup]="searchForm" class="header__form">
+      <div class="header__wrapper">
+        <input class="header__input" placeholder="Поиск..."
+               formControlName="searchStr">
+      </div>
+      <button (click)="addMessage()" class="header__btn" type="button">Добавить</button>
+    </form>
+  </div>
+</div>
